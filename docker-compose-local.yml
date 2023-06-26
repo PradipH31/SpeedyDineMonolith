@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql:
+    build: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 143642180
+      MYSQL_USER: pradip
+      MYSQL_PASSWORD: 1234WXYZ
+      MYSQL_DATABASE: speedy_dine
+    container_name: mysql
+
+  speedy-dine-monolith:
+    build: .
+    links:
+      - mysql
+    ports:
+      - 8080:8080
+    container_name: speedy-dine-monolith

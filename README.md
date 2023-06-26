@@ -2,6 +2,9 @@
 
 - [Running the program using Docker and building locally](#running-the-program-using-docker-and-building-locally)
 - [Running the program by pulling the images from DockerHub](#running-the-program-by-pulling-the-images-from-dockerhub)
+- [Running the program by using docker-compose](#running-the-program-by-using-docker-compose)
+   - [Using the source code](#using-the-source-code)
+   - [Using dockerhub images](#using-dockerhub-images)
 - [Using the program](#using-the-program)
 
 ## Running the program using Docker and building locally:
@@ -45,6 +48,22 @@ These commands will build the application, create and run the MySQL container, a
 These commands will build the application, create and run the MySQL container, and finally run the Spring Flux App container.
 
 Make sure you have Docker and Maven installed before executing these commands.
+
+## Running the program by using docker-compose:
+
+- #### Using the source code:
+
+Open your terminal and navigate to the project's root folder. Then execute these commands:
+`docker-compose -f docker-compose-local.yml up`
+
+- #### Using dockerhub images:
+
+Open your terminal and navigate to the project's root folder. Then execute these commands:
+`docker-compose -f docker-compose-dockerhub.yml up`
+
+You can use -d flag to run them detached and if you don't want to specify a file for docker-compose, you can delete one of the files and rename the remaining to docker-compose.yml
+
+Make sure you have buil the war package and have Docker installed before executing these commands.
 
 ## Using the program:
 
