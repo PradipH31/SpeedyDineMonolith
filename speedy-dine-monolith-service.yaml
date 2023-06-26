@@ -9,6 +9,7 @@ metadata:
     io.kompose.service: speedy-dine-monolith
   name: speedy-dine-monolith
 spec:
+  type: LoadBalancer
   ports:
     - name: "8080"
       port: 8080
