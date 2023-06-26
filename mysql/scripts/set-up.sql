@@ -1,5 +1,4 @@
-CREATE DATABASE speedy_dine;
-USE DATABASE speedy_dine;
+USE `speedy_dine`;
 
 -- Create the Restaurant table
 CREATE TABLE restaurant (
