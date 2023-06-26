@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  speedy-dine-monolith:
+    image: pradiph31/speedy-dine-monolith
+    links:
+      - mysql
+    ports:
+      - 8080:8080
+    container_name: speedy-dine-monolith
+
+  mysql:
+    image: pradiph31/speedy-dine-monolith-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 143642180
+      MYSQL_USER: pradip
+      MYSQL_PASSWORD: 1234WXYZ
+      MYSQL_DATABASE: speedy_dine
+    ports:
+      - 3306:3306
+    container_name: mysql
