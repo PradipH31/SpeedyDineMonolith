@@ -8,6 +8,8 @@ services:
     ports:
       - 8080:8080
     container_name: speedy-dine-monolith
+    depends_on:
+      - mysql
 
   mysql:
     image: pradiph31/speedy-dine-monolith-mysql

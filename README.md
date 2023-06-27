@@ -57,13 +57,13 @@ Make sure you have Docker and Maven installed before executing these commands.
 
 Open your terminal and navigate to the project's root folder. Then execute these commands:
 
-`docker-compose -f docker-compose-local.yml up`
+`docker-compose -f kubernetes+docker/docker/docker-compose-local.yml up`
 
 - #### Using dockerhub images
 
 Open your terminal and navigate to the project's root folder. Then execute these commands:
 
-`docker-compose -f docker-compose-dockerhub.yml up`
+`docker-compose -f kubernetes+docker/docker/docker-compose-dockerhub.yml up`
 
 You can use -d flag to run them detached and if you don't want to specify a file for docker-compose, you can delete one of the files and rename the remaining to docker-compose.yml
 
@@ -79,9 +79,11 @@ These kubernetes configuration files were generated using kompose on docker-comp
 
 You can also use it on a file:
 
-`kompose convert -f docker-compose-dockerhub.yml`
+`kompose convert -f kubernetes+docker/docker/docker-compose-dockerhub.yml`
 
 #### Kubernetes
+
+Change directory to kubernetes+docker.
 
 Applying the configurations and deploying them to kubernetes:
 
