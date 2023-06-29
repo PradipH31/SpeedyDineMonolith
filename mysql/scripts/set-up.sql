@@ -7,6 +7,14 @@ CREATE TABLE restaurant (
   address VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE user (
+  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  roles VARCHAR(255) NOT NULL
+);
+
 -- Insert sample data
 INSERT INTO restaurant (restaurant_id, name, address)
 VALUES
@@ -30,3 +38,14 @@ VALUES
   (18, 'Healthy Greens', '543 Pine Lane, Townsville'),
   (19, 'Sushi Master', '876 Elm Street, Cityville'),
   (20, 'BBQ Smokehouse', '234 Main Street, Villageland');
+
+INSERT INTO user (username, password, email, roles) VALUES
+  ('pradip', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'pradip@gmail.com', 'USER,ADMIN'),
+  ('alice', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'alice@gmail.com', 'USER'),
+  ('bob', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'bob@gmail.com', 'USER'),
+  ('charlie', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'charlie@gmail.com', 'USER'),
+  ('dave', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'dave@gmail.com', 'USER'),
+  ('eve', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'eve@gmail.com', 'USER'),
+  ('frank', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'frank@gmail.com', 'USER'),
+  ('grace', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'grace@gmail.com', 'USER'),
+  ('harry', '$2a$10$Qd1auiVDBB030fEHbbiib.9lCBOqZwxMeMxuXG/2jjVMP5X2m2aCG', 'harry@gmail.com', 'USER');
