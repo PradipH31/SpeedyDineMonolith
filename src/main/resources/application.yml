@@ -3,3 +3,9 @@ spring:
     url: r2dbc:mysql://mysql:3306/speedy_dine
     username: pradip
     password: 1234WXYZ
+
+application:
+  security:
+    jwt:
+      secret-key: b0303a2693bfa26a61f9fe922240544174067f51653c3b869228f391ceb32bf5
+      expiration: 300000
