@@ -17,13 +17,14 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public RestaurantRepository restaurantRepository;
 
 	@Override
-	public Mono<Restaurant> save(Restaurant restaurant) {
-		return restaurantRepository.save(restaurant);
+	public Mono<Restaurant> save(Mono<Restaurant> restaurantMono) {
+		return restaurantMono.flatMap(restaurantRepository::save);
 	}
 
 	@Override
 	public Mono<Restaurant> findById(Long id) {
-		return restaurantRepository.findById(id)
+		return restaurantRepository
+				.findById(id)
 				.switchIfEmpty(Mono.error(new ResourceNotFoundException("The restaurant does not exist")));
 	}
 

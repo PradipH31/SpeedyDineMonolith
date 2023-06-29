@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface RestaurantService {
-	public Mono<Restaurant> save(Restaurant restaurant);
+	public Mono<Restaurant> save(Mono<Restaurant> restaurantMono);
 
 	public Mono<Restaurant> findById(Long id);
 
