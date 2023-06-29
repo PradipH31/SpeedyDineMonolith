@@ -1,0 +1,16 @@
+Discover Speedy Dine: Order, Savor, Repeat!
+
+CTA: Explore Now and Satisfy Your Cravings!
+
+
+The dimensions of an app header logo can vary depending on your design preferences and the platform where the app will be used. However, here are some commonly used dimensions for app header logos:
+
+For mobile apps:
+
+iOS: 180px x 180px
+Android: 192px x 192px
+For web apps:
+
+Desktop: 150px x 150px or 300px x 300px (can vary based on the design)
+Responsive (for different screen sizes): 100px x 100px or 200px x 200px (can vary based on the design)
+These dimensions are not strict rules, but they provide a general guideline for creating app header logos. It's important to consider the specific platform and design requirements of your application to ensure the logo looks visually appealing and fits well within the header space.
