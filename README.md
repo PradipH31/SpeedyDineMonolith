@@ -24,7 +24,7 @@
    ```shell
    mvn clean package
    docker build -t pradiph31/speedy-dine-monolith .
-   docker run --detach --link mysql:mysql --publish 8080:8080 pradiph31/speedy-dine-monolith
+   b
 These commands will build the application, create and run the MySQL container, and finally run the Spring Flux App container.
 
 ## Running the program by pulling the images from DockerHub
@@ -95,10 +95,13 @@ Applying the configurations and deploying them to kubernetes:
 
 The program runs on the localhost:8080 or any other port that you specified in Step 2.
 The available endpoints are:
-| Authenticated | Endpoint              | Method | Request                                                                                                                                                              | Response                     |
-| ------------- | --------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| ✔️             | /api/restaurants      | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
-| ✔️             | /api/restaurants/{id} | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
-| ✔️             | /api/restaurants      | POST   | headers:<br>Authorization: JWT                                                                                                                                       |                              |
-| ❌             | /sign-up              | POST   | {<br>&nbsp;&nbsp;&nbsp;"username":"----",<br>&nbsp;&nbsp;&nbsp;"email":"----",<br>&nbsp;&nbsp;&nbsp;"password":"----",<br>&nbsp;&nbsp;&nbsp;"roles":"----,----"<br>} |                              |
-| ❌             | /userinfo             | GET    | headers:<br>Authorization: Basic base64encode(username:password)                                                                                                     | JWT in Authentication header |
+| Authenticated | Endpoint                        | Method | Request                                                                                                                                                              | Response                     |
+| ------------- | ------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| ✔️             | /api/restaurants                | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/restaurants/{id}           | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/restaurants                | POST   | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/menuitems/{id}             | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/menuitems                  | POST   | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/restaurants/{id}/menuitems | GET   | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ❌             | /sign-up                        | POST   | {<br>&nbsp;&nbsp;&nbsp;"username":"----",<br>&nbsp;&nbsp;&nbsp;"email":"----",<br>&nbsp;&nbsp;&nbsp;"password":"----",<br>&nbsp;&nbsp;&nbsp;"roles":"----,----"<br>} |                              |
+| ❌             | /userinfo                       | GET    | headers:<br>Authorization: Basic base64encode(username:password)                                                                                                     | JWT in Authentication header |
