@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.pradiph31</groupId>
 	<artifactId>SpeedyDineMonolith</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<name>SpeedyDineMonolith</name>
 	<description>Food Delivery Service in a Spring Boot Monolith</description>

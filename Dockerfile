@@ -1,5 +1,14 @@
-FROM tomcat:11.0.0-jre17
+# Use a lightweight base image
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the JAR file built with Eclipse into the container
+COPY target/*.jar ./SpeedyDine.jar
+
+# Expose the port on which the application listens
 EXPOSE 8080
-RUN rm -rf /usr/local/tomcat/webapps/*
-COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
-CMD [ "catalina.sh", "run" ]
+
+# Set the entrypoint command for the container
+ENTRYPOINT ["java", "-jar", "SpeedyDine.jar"]

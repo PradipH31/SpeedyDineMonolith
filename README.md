@@ -93,10 +93,12 @@ Applying the configurations and deploying them to kubernetes:
 
 ## Using the program
 
-The program runs on the localhost:8080 or any other port that youi specify in Step 2.
-The available endpoint is:
-| Method | Endpoint              |
-| ------ | --------------------- |
-| GET    | /api/restaurants      |
-| GET    | /api/restaurants/{id} |
-| POST   | /api/restaurants      |
+The program runs on the localhost:8080 or any other port that you specified in Step 2.
+The available endpoints are:
+| Authenticated | Endpoint              | Method | Request                                                                                                                                                              | Response                     |
+| ------------- | --------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| ✔️             | /api/restaurants      | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/restaurants/{id} | GET    | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ✔️             | /api/restaurants      | POST   | headers:<br>Authorization: JWT                                                                                                                                       |                              |
+| ❌             | /sign-up              | POST   | {<br>&nbsp;&nbsp;&nbsp;"username":"----",<br>&nbsp;&nbsp;&nbsp;"email":"----",<br>&nbsp;&nbsp;&nbsp;"password":"----",<br>&nbsp;&nbsp;&nbsp;"roles":"----,----"<br>} |                              |
+| ❌             | /userinfo             | GET    | headers:<br>Authorization: Basic base64encode(username:password)                                                                                                     | JWT in Authentication header |
