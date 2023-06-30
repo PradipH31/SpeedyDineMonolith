@@ -30,6 +30,7 @@
               "projects/speedy-dine-app/src/assets"
             ],
             "styles": [
+              "projects/speedy-dine-app/src/dining-theme.scss",
               "projects/speedy-dine-app/src/styles.sass"
             ],
             "scripts": []
