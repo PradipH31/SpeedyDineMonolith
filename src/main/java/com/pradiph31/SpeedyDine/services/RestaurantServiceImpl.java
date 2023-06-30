@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pradiph31.SpeedyDine.entities.Restaurant;
-import com.pradiph31.SpeedyDine.exceptions.ResourceNotFoundException;
 import com.pradiph31.SpeedyDine.repositories.RestaurantRepository;
 
 import reactor.core.publisher.Flux;

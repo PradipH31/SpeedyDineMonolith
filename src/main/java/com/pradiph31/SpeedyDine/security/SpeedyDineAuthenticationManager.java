@@ -22,13 +22,8 @@ public class SpeedyDineAuthenticationManager implements ReactiveAuthenticationMa
 	public Mono<Authentication> authenticate(Authentication authentication) {
 		String username = authentication.getName();
 		String password = authentication.getCredentials().toString();
-
-		System.out.println("Username: " + username);
-		System.out.println("Password: " + password);
-
-		return userDetailsService.findByUsername(username).doOnNext(userDetails -> {
-			System.out.println("UserDetails: " + userDetails);
-		}).filter(userDetails -> passwordEncoder.matches(password, userDetails.getPassword()))
+		return userDetailsService.findByUsername(username)
+				.filter(userDetails -> passwordEncoder.matches(password, userDetails.getPassword()))
 				.switchIfEmpty(Mono.error(new BadCredentialsException("Invalid credentials")))
 				.map(userDetails -> new UsernamePasswordAuthenticationToken(userDetails, password,
 						userDetails.getAuthorities()));

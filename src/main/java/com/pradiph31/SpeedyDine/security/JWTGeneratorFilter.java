@@ -50,7 +50,6 @@ public class JWTGeneratorFilter implements WebFilter {
 						.claim("username", authentication.getName()).claim("authorities", authorities)
 						.setIssuedAt(new Date()).setExpiration(new Date(new Date().getTime() + expiryDuration))
 						.signWith(key).compact();
-				System.out.print(jwt);
 				exchange.getResponse().getHeaders().set("Authorization", jwt);
 				return Mono.empty();
 			}).then(chain.filter(exchange));

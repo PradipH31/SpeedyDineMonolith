@@ -49,7 +49,6 @@ public class UserAccountController {
 
 	@GetMapping("/userinfo")
 	public Mono<ResponseEntity<?>> getUserDetails(Authentication authentication) {
-		System.out.println("In log in");
 		return userRepository.findByUsername(authentication.getName())
 				.switchIfEmpty(Mono.error(() -> new UsernameNotFoundException("Username not found")))
 				.map(user -> ResponseEntity.ok(user));

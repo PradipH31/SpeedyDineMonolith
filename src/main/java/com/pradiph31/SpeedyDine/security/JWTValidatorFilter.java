@@ -37,7 +37,6 @@ public class JWTValidatorFilter implements WebFilter {
 			if (result.isMatch()) {
 				return chain.filter(exchange);
 			}
-
 			String jwt = exchange.getRequest().getHeaders().getFirst("Authorization");
 			if (jwt != null) {
 				try {
@@ -47,7 +46,6 @@ public class JWTValidatorFilter implements WebFilter {
 					String authorities = (String) claims.get("authorities");
 					Authentication auth = new UsernamePasswordAuthenticationToken(username, null,
 							AuthorityUtils.commaSeparatedStringToAuthorityList(authorities));
-					System.out.println(auth);
 					return chain.filter(exchange).contextWrite(ReactiveSecurityContextHolder.withAuthentication(auth));
 				} catch (Exception e) {
 					return handleInvalidCredentials(exchange.getResponse());
