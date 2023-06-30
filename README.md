@@ -25,7 +25,14 @@
    mvn clean package
    docker build -t pradiph31/speedy-dine-monolith .
    docker run --detach --link mysql:mysql --publish 8080:8080 pradiph31/speedy-dine-monolith
-These commands will build the application, create and run the MySQL container, and finally run the Spring Flux App container.
+
+1. Run the Angular client app:
+   Open your terminal and navigate to dine-client folder. Then execute these commands:
+   ```shell
+   ng build --configuration production
+   docker build -t pradiph31/speedy-dine-monolith-client .
+   docker run -d -p 4200:80 pradiph31/speedy-dine-monolith-client
+These commands will build the application, create and run the MySQL container the Spring Flux App container and the Angular client.
 
 ## Running the program by pulling the images from DockerHub
 
@@ -34,22 +41,25 @@ These commands will build the application, create and run the MySQL container, a
    https://hub.docker.com/r/pradiph31/speedy-dine-monolith-mysql
 
    https://hub.docker.com/r/pradiph31/speedy-dine-monolith
+
+   https://hub.docker.com/r/pradiph31/speedy-dine-monolith-client
    
 1. Run the MySQL container first:
 
 
-   Open your terminal and navigate to the `mysql` folder. Then execute these commands:
+   Open your terminal and  execute these commands:
 
    ```shell
    docker run --name mysql -e MYSQL_ROOT_PASSWORD=0143642180 -e MYSQL_USER=pradip -e MYSQL_PASSWORD=1234WXYZ -e MYSQL_DATABASE=speedy_dine --publish 3306:3306 -d pradiph31/speedy-dine-monolith-mysql
-1. Run the Spring Flux App container:
-
-   Open your terminal and navigate to the project folder. Then execute these commands:
+2. Run the Spring Flux App container:   
    ```shell
    docker run --detach --link mysql:mysql --publish 8080:8080 pradiph31/speedy-dine-monolith
+3. Run the Angular container:
+   ```shell
+   docker run --detach --publish 4200:80 pradiph31/speedy-dine-monolith-client
 These commands will build the application, create and run the MySQL container, and finally run the Spring Flux App container.
 
-Make sure you have Docker and Maven installed before executing these commands.
+Make sure you have Docker, Angular CLI and Maven installed before executing these commands.
 
 ## Running the program by using docker-compose
 
