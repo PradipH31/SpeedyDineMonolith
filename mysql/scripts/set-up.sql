@@ -219,3 +219,274 @@ VALUES
     'USER'
   );
 
+-- Create the MenuItem table
+CREATE TABLE
+  menu_item (
+    item_id BIGINT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    ingredients VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    availability BOOLEAN NOT NULL,
+    preparation_time INT NOT NULL,
+    image VARCHAR(255),
+    allergen_information VARCHAR(255),
+    restaurant_id BIGINT NOT NULL,
+    FOREIGN KEY (restaurant_id) REFERENCES restaurant (restaurant_id)
+  );
+
+-- Insert sample data for menu items
+INSERT INTO
+  menu_item (
+    item_id,
+    name,
+    description,
+    ingredients,
+    price,
+    availability,
+    preparation_time,
+    image,
+    allergen_information,
+    restaurant_id
+  )
+VALUES
+  (
+    1,
+    'Margherita Pizza',
+    'Classic pizza with tomato sauce and mozzarella cheese',
+    'Tomato sauce, mozzarella cheese, basil',
+    10.99,
+    true,
+    20,
+    'margherita.jpg',
+    'Contains dairy',
+    5
+  ),
+  (
+    2,
+    'Pepperoni Pizza',
+    'Pizza topped with pepperoni slices',
+    'Tomato sauce, mozzarella cheese, pepperoni',
+    12.99,
+    true,
+    25,
+    'pepperoni.jpg',
+    'Contains dairy, pork',
+    5
+  ),
+  (
+    3,
+    'Spaghetti Bolognese',
+    'Pasta with meat sauce',
+    'Spaghetti, ground beef, tomato sauce, onions, garlic',
+    13.99,
+    true,
+    30,
+    'spaghetti.jpg',
+    'Contains gluten, dairy',
+    1
+  ),
+  (
+    4,
+    'Steak Frites',
+    'Grilled steak served with french fries',
+    'Beef steak, salt, pepper, french fries',
+    22.99,
+    true,
+    35,
+    'steak.jpg',
+    'Contains beef',
+    6
+  ),
+  (
+    5,
+    'Chicken Teriyaki',
+    'Grilled chicken with teriyaki sauce',
+    'Chicken breast, teriyaki sauce, soy sauce, garlic, ginger',
+    16.99,
+    true,
+    30,
+    'chicken_teriyaki.jpg',
+    'Contains soy',
+    3
+  ),
+  (
+    6,
+    'Cheeseburger',
+    'Classic burger with cheese',
+    'Beef patty, cheese, lettuce, tomato, onion',
+    9.99,
+    true,
+    20,
+    'cheeseburger.jpg',
+    'Contains beef, dairy',
+    9
+  ),
+  (
+    7,
+    'Shrimp Pad Thai',
+    'Stir-fried rice noodles with shrimp',
+    'Rice noodles, shrimp, eggs, bean sprouts, peanuts',
+    14.99,
+    true,
+    25,
+    'pad_thai.jpg',
+    'Contains shellfish, peanuts',
+    3
+  ),
+  (
+    8,
+    'Caesar Salad',
+    'Traditional salad with romaine lettuce, croutons, and Caesar dressing',
+    'Romaine lettuce, croutons, Parmesan cheese, Caesar dressing',
+    8.99,
+    true,
+    15,
+    'caesar_salad.jpg',
+    'Contains gluten, dairy',
+    4
+  ),
+  (
+    9,
+    'Fish and Chips',
+    'Battered and fried fish with french fries',
+    'Fish fillet, batter, french fries, tartar sauce',
+    11.99,
+    true,
+    30,
+    'fish_and_chips.jpg',
+    'Contains gluten, fish',
+    6
+  ),
+  (
+    10,
+    'Mushroom Risotto',
+    'Creamy risotto with mushrooms',
+    'Arborio rice, mushrooms, vegetable broth, onions, Parmesan cheese',
+    15.99,
+    true,
+    40,
+    'mushroom_risotto.jpg',
+    'Contains gluten, dairy',
+    2
+  ),
+  (
+    11,
+    'Sushi Combo',
+    'Assortment of sushi rolls and nigiri',
+    'Fresh fish, sushi rice, seaweed, soy sauce, wasabi, pickled ginger',
+    18.99,
+    true,
+    30,
+    'sushi_combo.jpg',
+    'Contains fish',
+    3
+  ),
+  (
+    12,
+    'Croissant Sandwich',
+    'Buttery croissant filled with ham and cheese',
+    'Croissant, ham, cheese, lettuce, tomato',
+    7.99,
+    true,
+    15,
+    'croissant_sandwich.jpg',
+    'Contains gluten, pork, dairy',
+    4
+  ),
+  (
+    13,
+    'Chicken Tikka Masala',
+    'Chicken cooked in a creamy tomato-based sauce',
+    'Chicken, tomato sauce, yogurt, spices, basmati rice',
+    16.99,
+    true,
+    35,
+    'chicken_tikka_masala.jpg',
+    'Contains dairy',
+    7
+  ),
+  (
+    14,
+    'Beef Stir-Fry',
+    'Sliced beef stir-fried with vegetables',
+    'Beef, bell peppers, onions, broccoli, soy sauce',
+    17.99,
+    true,
+    25,
+    'beef_stir_fry.jpg',
+    'Contains soy',
+    7
+  ),
+  (
+    15,
+    'Margherita Pasta',
+    'Pasta with tomato sauce and mozzarella cheese',
+    'Penne pasta, tomato sauce, mozzarella cheese, basil',
+    12.99,
+    true,
+    30,
+    'margherita_pasta.jpg',
+    'Contains gluten, dairy',
+    1
+  ),
+  (
+    16,
+    'Chicken Satay',
+    'Grilled chicken skewers with peanut sauce',
+    'Chicken breast, peanut sauce, soy sauce, garlic, ginger',
+    13.99,
+    true,
+    25,
+    'chicken_satay.jpg',
+    'Contains peanuts',
+    7
+  ),
+  (
+    17,
+    'Vegetable Curry',
+    'Mixed vegetables cooked in a flavorful curry sauce',
+    'Assorted vegetables, curry sauce, coconut milk, spices, rice',
+    14.99,
+    true,
+    35,
+    'vegetable_curry.jpg',
+    'Contains coconut',
+    8
+  ),
+  (
+    18,
+    'Caprese Salad',
+    'Salad with fresh mozzarella, tomatoes, and basil',
+    'Mozzarella cheese, tomatoes, fresh basil, balsamic glaze',
+    9.99,
+    true,
+    15,
+    'caprese_salad.jpg',
+    'Contains dairy',
+    4
+  ),
+  (
+    19,
+    'Chicken Shawarma',
+    'Grilled marinated chicken wrapped in pita bread',
+    'Chicken, pita bread, garlic sauce, pickles, tomatoes',
+    10.99,
+    true,
+    20,
+    'chicken_shawarma.jpg',
+    'Contains gluten',
+    2
+  ),
+  (
+    20,
+    'Vegan Buddha Bowl',
+    'Nourishing bowl with a variety of vegetables, grains, and dressing',
+    'Quinoa, mixed vegetables, chickpeas, avocado, tahini dressing',
+    13.99,
+    true,
+    25,
+    'vegan_buddha_bowl.jpg',
+    'Contains sesame',
+    8
+  );
