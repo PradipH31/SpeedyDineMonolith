@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "projects/speedy-dine-app",
@@ -31,7 +31,7 @@
             ],
             "styles": [
               "projects/speedy-dine-app/src/dining-theme.scss",
-              "projects/speedy-dine-app/src/styles.sass"
+              "projects/speedy-dine-app/src/styles.scss"
             ],
             "scripts": []
           },
