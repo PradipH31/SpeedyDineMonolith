@@ -153,7 +153,7 @@ VALUES
 -- Create the user table
 CREATE TABLE
   user (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -489,4 +489,101 @@ VALUES
     'vegan_buddha_bowl.jpg',
     'Contains sesame',
     8
+  );
+
+-- Create customers table
+CREATE TABLE
+  customer (
+    customer_id BIGINT PRIMARY KEY,
+    address VARCHAR(255),
+    phone_number VARCHAR(20),
+    user_id BIGINT,
+    FOREIGN KEY (user_id) REFERENCES user (user_id)
+  );
+
+-- Insert sample data
+INSERT INTO
+  customer (customer_id, address, phone_number, user_id)
+VALUES
+  (1, '123 Main Street', '123-456-7890', 1),
+  (2, '456 Elm Street', '987-654-3210', 2),
+  (3, '789 Oak Avenue', '456-789-1230', 3),
+  (4, '567 Pine Lane', '555-123-4567', 4);
+
+-- Create the orders table
+CREATE TABLE
+  orders (
+    order_id BIGINT PRIMARY KEY,
+    menu_item_ids VARCHAR(255),
+    customer_id BIGINT NOT NULL,
+    order_date DATE NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    is_completed BOOLEAN NOT NULL,
+    delivery_address VARCHAR(255) NOT NULL,
+    special_instructions VARCHAR(255),
+    FOREIGN KEY (customer_id) REFERENCES customer (customer_id)
+  );
+
+-- Insert sample data
+INSERT INTO
+  orders (
+    order_id,
+    menu_item_ids,
+    customer_id,
+    order_date,
+    total_price,
+    is_completed,
+    delivery_address,
+    special_instructions
+  )
+VALUES
+  (
+    1,
+    '1,2,3',
+    1,
+    '2023-06-29',
+    35.99,
+    true,
+    '123 Main Street, Cityville',
+    'No onions'
+  ),
+  (
+    2,
+    '4,5',
+    2,
+    '2023-06-30',
+    26.50,
+    false,
+    '456 Elm Street, Townsville',
+    'Extra cheese'
+  ),
+  (
+    3,
+    '6',
+    1,
+    '2023-07-01',
+    9.99,
+    false,
+    '789 Oak Avenue, Villageland',
+    'Spicy'
+  ),
+  (
+    4,
+    '7,8,9',
+    3,
+    '2023-07-02',
+    41.75,
+    true,
+    '567 Pine Lane, Townsville',
+    NULL
+  ),
+  (
+    5,
+    '10,11',
+    2,
+    '2023-07-03',
+    34.99,
+    true,
+    '321 Elm Street, Cityville',
+    NULL
   );
