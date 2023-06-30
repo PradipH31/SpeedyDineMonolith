@@ -11,10 +11,13 @@ public class Restaurant {
 	private Long restaurantId;
 	private String name;
 	private String address;
-
-	public Restaurant(String name, String address) {
-		this.name = name;
-		this.address = address;
-	}
+	private String phoneNumber;
+	private String email;
+	private String openingHours;
+	private String cuisineType;
+	private double deliveryRadius;
+	private double averageRating;
+	private String owner;
+	private String website;
 
 }

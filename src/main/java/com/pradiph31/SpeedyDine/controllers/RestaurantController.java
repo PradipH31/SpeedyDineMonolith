@@ -37,8 +37,7 @@ public class RestaurantController {
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public Mono<ResponseEntity<Restaurant>> getRestaurantById(@PathVariable("id") Long id) {
-		return restaurantService.findById(id).map(ResponseEntity::ok)
-				.defaultIfEmpty(ResponseEntity.notFound().build());
+		return restaurantService.findById(id).map(ResponseEntity::ok).defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 
 	@PostMapping

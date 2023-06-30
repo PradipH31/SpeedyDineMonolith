@@ -23,9 +23,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	public Mono<Restaurant> findById(Long id) {
-		return restaurantRepository
-				.findById(id)
-				.switchIfEmpty(Mono.error(new ResourceNotFoundException("The restaurant does not exist")));
+		return restaurantRepository.findById(id);
 	}
 
 	@Override
