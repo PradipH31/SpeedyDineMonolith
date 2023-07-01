@@ -4,7 +4,13 @@
             <span class="logo-header-part1">Speedy</span>
             <span class="logo-header-part2">Dine</span>
         </span>
-        <mat-icon>account_circle</mat-icon>
+
+        <mat-icon [matMenuTriggerFor]="menu">account_circle</mat-icon>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Profie</button>
+            <button mat-menu-item>Log out</button>
+        </mat-menu>
+
     </div>
 </mat-toolbar>
 <div class="container">
