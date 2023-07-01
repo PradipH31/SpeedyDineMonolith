@@ -13,11 +13,17 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { DiningDashboardComponent } from './components/home/dining-dashboard/dining-dashboard.component';
+import { OrdersComponent } from './components/home/orders/orders.component';
+import { ItemsComponent } from './components/home/items/items.component';
+import { RestaurantsComponent } from './components/home/restaurants/restaurants.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DiningDashboardComponent,
+    OrdersComponent,
+    ItemsComponent,
+    RestaurantsComponent,
   ],
   imports: [
     BrowserModule,

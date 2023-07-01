@@ -8,7 +8,20 @@
   left: 15px;
   right: 15px;
   bottom: 15px;
+  margin-inline: 5px;
 }
+
+@media only screen and (min-width: 1080px) {
+  .grid-container {
+    margin: unset;
+  }
+
+  .dashboard-card {
+    left: 1px;
+    right: 1px;
+  }
+}
+
 
 .more-button {
   position: absolute;
@@ -17,5 +30,5 @@
 }
 
 .dashboard-card-content {
-  text-align: center;
+  text-align: left;
 }
