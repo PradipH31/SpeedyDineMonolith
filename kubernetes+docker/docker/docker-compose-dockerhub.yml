@@ -1,6 +1,12 @@
 version: '3.8'
 
 services:
+  speedy-dine-client:
+    image: pradiph31/speedy-dine-monolith-client
+    container_name: speedy-done-monolith-client
+    ports:
+      - 4200:80
+
   speedy-dine-monolith:
     image: pradiph31/speedy-dine-monolith
     links:
