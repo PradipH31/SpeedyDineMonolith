@@ -11,6 +11,11 @@
   margin-inline: 5px;
 }
 
+.mat-mdc-card-header {
+  background-color: #673ab7;
+  color: white;
+}
+
 @media only screen and (min-width: 1080px) {
   .grid-container {
     margin: unset;
