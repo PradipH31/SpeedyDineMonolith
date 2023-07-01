@@ -1,18 +1,23 @@
 <mat-toolbar color="primary">
     <div class="navbar-contents">
-        <span>
-            <span class="logo-header-part1">Speedy</span>
-            <span class="logo-header-part2">Dine</span>
-        </span>
+        <a routerLink="/">
+            <span>
+                <span class="logo-header-part1">Speedy</span>
+                <span class="logo-header-part2">Dine</span>
+            </span>
+        </a>
 
-        <mat-icon [matMenuTriggerFor]="menu">account_circle</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
         <mat-menu #menu="matMenu" xPosition="before">
-            <button mat-menu-item>Profie</button>
+            <a routerLink="/profile"><button mat-menu-item>Profie</button></a>
             <button mat-menu-item>Log out</button>
         </mat-menu>
 
     </div>
 </mat-toolbar>
 <div class="container">
-    <app-dining-dashboard></app-dining-dashboard>
+    <router-outlet>
+    </router-outlet>
 </div>
