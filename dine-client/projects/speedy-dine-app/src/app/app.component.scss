@@ -1,0 +1,17 @@
+ .logo-header-part1 {
+     color: rgb(232, 237, 241);
+     font-weight: 600;
+ }
+
+ .logo-header-part2 {
+     font-weight: 600;
+ }
+
+ @media only screen and (min-width: 1080px) {
+     .navbar-contents {
+         width: 1080px;
+         margin: 0 auto;
+         display: flex;
+         justify-content: space-between
+     }
+ }

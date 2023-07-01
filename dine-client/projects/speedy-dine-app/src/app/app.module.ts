@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DiningNavigationComponent } from './dining-navigation/dining-navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -18,7 +17,6 @@ import { DiningDashboardComponent } from './components/home/dining-dashboard/din
 @NgModule({
   declarations: [
     AppComponent,
-    DiningNavigationComponent,
     DiningDashboardComponent,
   ],
   imports: [
