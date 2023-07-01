@@ -16,6 +16,7 @@ import { DiningDashboardComponent } from './components/home/dining-dashboard/din
 import { OrdersComponent } from './components/home/orders/orders.component';
 import { ItemsComponent } from './components/home/items/items.component';
 import { RestaurantsComponent } from './components/home/restaurants/restaurants.component';
+import { HeroComponent } from './components/home/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RestaurantsComponent } from './components/home/restaurants/restaurants.
     OrdersComponent,
     ItemsComponent,
     RestaurantsComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,
