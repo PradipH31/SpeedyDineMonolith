@@ -1,19 +1,9 @@
 <mat-action-list>
     <mat-list>
-        <mat-list-item>
-            <span matListItemTitle>Pepperoni Pizza</span>
-            <span matListItemLine>Mama Mia Pizzeria</span>
-            <button mat-raised-button color="primary">Order again!!!</button>
-        </mat-list-item>
-
-        <mat-list-item>
-            <span matListItemTitle>Pepperoni Pizza</span>
-            <span matListItemLine>Mama Mia Pizzeria</span>
-            <button mat-raised-button color="primary">Order again!!!</button>
-        </mat-list-item>
-        <mat-list-item>
-            <span matListItemTitle>Pepperoni Pizza</span>
-            <span matListItemLine>Mama Mia Pizzeria</span>
+        <mat-list-item *ngFor="let item of items" class="list-item">
+            <span matListItemTitle>{{ item.name }}</span>
+            <span matListItemLine>Ready in {{ item.preparation_time }} mins.</span>
+            <span matListItemLine>** {{ item.allergen_information }}</span>
             <button mat-raised-button color="primary">Order again!!!</button>
         </mat-list-item>
     </mat-list>

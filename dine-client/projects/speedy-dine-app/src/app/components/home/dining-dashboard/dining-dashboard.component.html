@@ -17,7 +17,7 @@
         </mat-card-header>
         <mat-divider></mat-divider>
         <mat-card-content class="dashboard-card-content">
-          <app-orders></app-orders>
+          <app-orders [orders]="orders"></app-orders>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -38,7 +38,7 @@
         </mat-card-header>
         <mat-divider></mat-divider>
         <mat-card-content class="dashboard-card-content">
-          <app-items></app-items>
+          <app-items [items]="menuItems"></app-items>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -59,7 +59,7 @@
         </mat-card-header>
         <mat-divider></mat-divider>
         <mat-card-content class="dashboard-card-content">
-          <app-restaurants></app-restaurants>
+          <app-restaurants [restaurants]="restaurants"></app-restaurants>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

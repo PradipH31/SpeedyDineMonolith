@@ -1,21 +1,12 @@
 <mat-action-list>
     <mat-list>
-        <mat-list-item>
-            <span matListItemTitle>5th May 2023</span>
-            <span matListItemLine>Delivery</span>
-            <span matListItemLine>Totals</span>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-            <span matListItemTitle>5th May 2023</span>
-            <span matListItemLine>Delivery</span>
-            <span matListItemLine>Totals</span>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-            <span matListItemTitle>5th May 2023</span>
-            <span matListItemLine>Delivery</span>
-            <span matListItemLine>Totals</span>
-        </mat-list-item>
+        <div *ngFor="let order of orders">
+            <mat-list-item>
+                <span matListItemTitle>Delivery Status: {{ order.is_completed?'Done':'On the way' }}</span>
+                <span matListItemLine>{{ order.order_date }}</span>
+                <span matListItemLine>${{ order.total_price }}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </div>
     </mat-list>
 </mat-action-list>

@@ -10,6 +10,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.navigate(['/']);
   }
+  
   title = 'speedy-dine-app';
   imageUrl = "/assets/images/logo.png"
 }
