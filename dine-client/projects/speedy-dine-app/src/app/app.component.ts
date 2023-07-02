@@ -11,4 +11,5 @@ export class AppComponent {
     this.router.navigate(['/']);
   }
   title = 'speedy-dine-app';
+  imageUrl = "/assets/images/logo.png"
 }

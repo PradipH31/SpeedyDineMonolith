@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  imageUrl = 'assets/images/hero-banner.jpg';
+  imageUrl = 'assets/images/hero-banner.png';
 }

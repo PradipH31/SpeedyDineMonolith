@@ -17,10 +17,27 @@
          width: 1080px;
          margin: 0 auto;
          display: flex;
-         justify-content: space-between
-     }
+         justify-content: space-between;
 
-     .navbar-contents a {
-         align-self: center;
+         button {
+             align-self: center;
+         }
+
+         a {
+             display: flex;
+             flex-direction: row;
+             justify-content: center;
+             align-items: center;
+         }
+
+         img {
+             width: 3.4vw;
+
+         }
+
+         .logo-header {
+             font-size: 1.5em;
+         }
+
      }
  }
